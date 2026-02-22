@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ENGINEER'S STUDY HUB</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            margin-top: 100px;
+            background-color: #f4f4f4;
+        }
+        .box {
+            background: white;
+            padding: 30px;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 250px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1>ENGINEER'S STUDY HUB</h1>
+    <h3>Enter Roll Number to Access Folder</h3>
+
+    <input type="password" id="roll" placeholder="Enter Roll Number">
+    <br>
+    <button onclick="checkRoll()">Submit</button>
+
+    <p id="message"></p>
+</div>
+
+<script>
+    function checkRoll() {
+
+        var roll = document.getElementById("roll").value.trim().toLowerCase();
+
+        var allowedRollNumbers = [
+            "25101a040442",
+            "25102a040442",
+            "25102a040303"
+        ];
+
+        if (allowedRollNumbers.includes(roll)) {
+            window.location.href = "https://drive.google.com/drive/folders/1yowV6dGxsQI7f2Jsnptbg1_IidaKmcZS?usp=drive_link";
+        } 
+        else {
+            document.getElementById("message").innerHTML = "Access Denied!";
+        }
+    }
+</script>
+
+</body>
+</html>
